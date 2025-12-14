@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-# FIX: grant execute permission to mvnw
+# FIX Windows → Linux permission issue
 RUN chmod +x mvnw
 
 RUN ./mvnw clean package -DskipTests
