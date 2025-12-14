@@ -3,11 +3,14 @@
 A full-stack **Todo application** built using **Spring Boot** and **Thymeleaf**, focused on clean backend architecture, usability, and time-tracking productivity features.  
 The project demonstrates end-to-end development using Java, from MVC design to deployment.
 
+## 🌐 Live Application
+👉 https://priyanshus-todo-app.onrender.com/
+
 ---
 
 ## 🚀 Live Demo
 👉 Deployed on Render  
-_(URL will be added after deployment)_
+👉 https://priyanshus-todo-app.onrender.com/
 
 ---
 
@@ -39,4 +42,3 @@ _(URL will be added after deployment)_
 ## 🧱 Architecture
 
 The application follows a **layered architecture**:
-
