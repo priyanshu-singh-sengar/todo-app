@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todo App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="top-bar">
+        <h1>📝 Todo</h1>
+        <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
+    </div>
+
+    <div class="total-time">
+        ⏱ Total time spent: <span id="totalTime">00:00:00</span>
+    </div>
+
+    <form class="add-form" action="/add" method="post">
+        <input type="text" name="title" placeholder="Add a new task…" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        <li th:each="todo : ${todos}"
+            th:attr="data-completed=${todo.completed}">
+
+            <span th:id="'text-' + ${todo.id}"
+                  th:attr="data-id=${todo.id}"
+                  class="todo-title"
+                  th:text="${todo.title}"
+                  th:classappend="${todo.completed} ? ' completed' : ''"
+                  ondblclick="enableEdit(this)">
+            </span>
+
+            <form th:id="'edit-' + ${todo.id}"
+                  th:action="@{/edit/{id}(id=${todo.id})}"
+                  method="post"
+                  style="display:none;">
+                <input class="edit-input"
+                       name="title"
+                       th:value="${todo.title}"
+                       onblur="this.form.submit()">
+            </form>
+
+            <div class="actions">
+                <!-- timer controls -->
+                <button class="timer-btn play" onclick="startTimer(this)">▶</button>
+                <button class="timer-btn pause" onclick="pauseTimer(this)">⏸</button>
+                <button class="timer-btn reset" onclick="resetTimer(this)">⟲</button>
+
+                <span class="task-time" data-time="0">00:00:00</span>
+
+                <form class="toggle-form"
+                      th:action="@{/toggle/{id}(id=${todo.id})}"
+                      method="post"
+                      onsubmit="finalizeTaskTime(this)">
+                    <button class="action-btn done-btn"
+                            th:text="${todo.completed} ? 'Undo' : 'Done'">
+                    </button>
+                </form>
+
+                <form th:action="@{/delete/{id}(id=${todo.id})}" method="post">
+                    <button class="action-btn delete-btn">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </li>
+    </ul>
+
+    <p class="empty" th:if="${#lists.isEmpty(todos)}">
+        No tasks yet. Start typing to add one 👆
+    </p>
+
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
