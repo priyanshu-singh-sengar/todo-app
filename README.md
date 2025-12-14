@@ -1,2 +1,42 @@
-# todo-app
-A full-stack Todo application built with Spring Boot and Thymeleaf, featuring task management, real-time timers per task, total time tracking, and a responsive dark/light UI. The application follows a layered architecture (Controller–Service–Repository) and is deployed as a standalone Java application.
+# 📝 Todo Application (Spring Boot)
+
+A full-stack **Todo application** built using **Spring Boot** and **Thymeleaf**, focused on clean backend architecture, usability, and time-tracking productivity features.  
+The project demonstrates end-to-end development using Java, from MVC design to deployment.
+
+---
+
+## 🚀 Live Demo
+👉 Deployed on Render  
+_(URL will be added after deployment)_
+
+---
+
+## 🛠 Tech Stack
+
+- **Backend:** Java 17, Spring Boot  
+- **Web:** Spring MVC, Thymeleaf  
+- **Database:** H2 (in-memory)  
+- **ORM:** Spring Data JPA (Hibernate)  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Build Tool:** Maven  
+- **Deployment:** Render  
+
+---
+
+## ✨ Features
+
+- Create, update, and delete todo tasks  
+- Mark tasks as completed or undo completion  
+- Inline editing of task titles  
+- Per-task timer with start, pause, and reset  
+- Automatic total time tracking across all completed tasks  
+- Keyboard-first input experience (type anywhere to add tasks)  
+- Dark / light mode with persisted user preference  
+- Responsive and accessible UI design  
+
+---
+
+## 🧱 Architecture
+
+The application follows a **layered architecture**:
+
