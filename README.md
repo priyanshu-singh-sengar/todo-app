@@ -8,12 +8,6 @@ The project demonstrates end-to-end development using Java, from MVC design to d
 
 ---
 
-## 🚀 Live Demo
-👉 Deployed on Render  
-👉 https://priyanshus-todo-app.onrender.com/
-
----
-
 ## 🛠 Tech Stack
 
 - **Backend:** Java 17, Spring Boot  
